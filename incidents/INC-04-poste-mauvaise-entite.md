@@ -6,7 +6,6 @@
 | Composants | GLPI Agent 1.21 (PC-CLIENT01), GLPI 12 |
 | Impact | Le poste atterrit dans l'Entité racine : mauvais périmètre de droits, pas de SLA ni de routage |
 | Priorité | Moyenne |
-| Ticket GLPI | #_à compléter_ |
 
 ## Symptômes
 Après la première remontée de l'agent, **Parc > Ordinateurs** affiche PC-CLIENT01 avec la colonne **Entité = Entité racine**.
@@ -44,6 +43,3 @@ Le poste apparaît dans **Entité racine > Atelier Morel**.
 ## Prévention
 - Définir la règle d'affectation avant le déploiement des agents.
 - Un tag par entité cliente, imposé dans le paquet de déploiement.
-
-## Captures
-`captures/XX-poste-entite-racine.png`, `captures/70-regle-affectation-entite.png`, `captures/67-parc-ordinateurs.png`

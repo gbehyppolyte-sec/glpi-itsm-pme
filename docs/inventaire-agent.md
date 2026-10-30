@@ -71,7 +71,7 @@ L'agent remonte aussi les comptes connectés sur le poste. GLPI rattache alors l
 
 L'installation à la main ne se fait pas à cette échelle. En domaine Active Directory :
 - déposer le MSI sur un partage en lecture seule ;
-- déployer par **GPO** (script de démarrage qui installe l'agent s'il est absent, avec les mêmes paramètres) sur l'OU `Postes` ;
+- déployer par **GPO** (script de démarrage qui installe l'agent s'il est absent, avec les mêmes paramètres) sur l'OU `Ordinateurs` ;
 - le tag route automatiquement les postes vers la bonne entité.
 
 ## Limites connues
@@ -79,3 +79,23 @@ L'installation à la main ne se fait pas à cette échelle. En domaine Active Di
 - Authentification basique : le mot de passe du compte `svc-agent-glpi` est stocké sur le poste (clé de registre de l'agent). Atténué par un compte
   à moindre privilège ; en production, préférer **OAuth**.
 - Pas de HTTPS sur GLPI dans ce lab (piste d'amélioration).
+
+## Captures
+
+![Inventaire activé dans GLPI](../captures/64-inventaire-active.png)
+*Inventaire activé dans GLPI*
+
+![Profil « Agent inventaire » : seul le droit Inventaire (Lecture, Importer)](../captures/64c-profil-agent-inventaire.png)
+*Profil « Agent inventaire » : seul le droit Inventaire (Lecture, Importer)*
+
+![Installation de GLPI Agent 1.21](../captures/65-agent-installation.png)
+*Installation de GLPI Agent 1.21*
+
+![Service GLPI-Agent en fonctionnement](../captures/66-service-agent.png)
+*Service GLPI-Agent en fonctionnement*
+
+![Fiche du poste : composants, logiciels, utilisateur et lieu rattachés automatiquement](../captures/72-fiche-poste-rattache.png)
+*Fiche du poste : composants, logiciels, utilisateur et lieu rattachés automatiquement*
+
+![Fiche de DC01 (serveur) : lieu Salle serveur](../captures/72-fiche-poste-rattache_server.png)
+*Fiche de DC01 (serveur) : lieu Salle serveur*

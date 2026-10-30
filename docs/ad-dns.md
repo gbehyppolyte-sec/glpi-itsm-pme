@@ -21,13 +21,14 @@ Forêt `atelier.local` (NetBIOS `ATELIER`), DNS intégré à l'AD.
 atelier.local
 └── Atelier Morel
     ├── Utilisateurs
-    │   ├── Direction / Administratif / Commercial / Production / Informatique
+    │   └── Direction / Administratif / Commercial / Production / Informatique
     ├── Groupes        (GG_Direction, GG_Administratif, GG_Commercial, GG_Production, GG_Informatique)
-    ├── Postes
-    └── Comptes de service  (svc-glpi-ldap)
+    ├── Ordinateurs    (PC-CLIENT01)
+    └── Serveurs       (compte de service svc-glpi-ldap)
 ```
 
-Création des OU et groupes (principe) :
+Création des OU et groupes (principe). Les OU `Atelier Morel`, `Utilisateurs`, `Groupes`, `Ordinateurs` et `Serveurs` sont créées d'abord
+avec `New-ADOrganizationalUnit`, puis les cinq OU de services et les groupes :
 
 ```powershell
 $services = "Direction","Administratif","Commercial","Production","Informatique"
@@ -66,7 +67,7 @@ Il lit l'annuaire, rien d'autre.
 ```powershell
 New-ADUser -Name "svc-glpi-ldap" -SamAccountName "svc-glpi-ldap" `
            -UserPrincipalName "svc-glpi-ldap@atelier.local" `
-           -Path "OU=Comptes de service,OU=Atelier Morel,DC=atelier,DC=local" `
+           -Path "OU=Serveurs,OU=Atelier Morel,DC=atelier,DC=local" `
            -AccountPassword (Read-Host -AsSecureString "Mot de passe") `
            -PasswordNeverExpires $true -CannotChangePassword $true -Enabled $true
 ```
@@ -100,13 +101,13 @@ resolvectl status ens34
 
 ## 5. Jonction du poste client au domaine
 
-PC-CLIENT01 : DNS = 192.168.50.5, jonction dans l'OU `Postes` :
+PC-CLIENT01 : DNS = 192.168.50.5, jonction dans l'OU `Ordinateurs` :
 
 ```powershell
-Add-Computer -DomainName atelier.local -OUPath "OU=Postes,OU=Atelier Morel,DC=atelier,DC=local" -Credential ATELIER\<admin> -Restart
+Add-Computer -DomainName atelier.local -OUPath "OU=Ordinateurs,OU=Atelier Morel,DC=atelier,DC=local" -Credential ATELIER\<admin> -Restart
 ```
 
-- `-OUPath` : range directement l'ordinateur dans la bonne OU (sinon il atterrit dans le conteneur `Computers`).
+- `-OUPath` : range directement l'ordinateur dans la bonne OU (sinon il atterrit dans le conteneur `Computers` par défaut).
 - `-Restart` : redémarre pour finaliser la jonction.
 
 ## 6. Autorité de certification et LDAPS
@@ -135,3 +136,59 @@ openssl s_client -connect dc01.atelier.local:636 -CAfile /usr/local/share/ca-cer
 ```
 
 Attendu : `Verify return code: 0 (ok)`. Note : le fichier copié dans `ca-certificates` doit se terminer par `.crt` et être au format PEM.
+
+## Captures
+
+![Installation du rôle AD DS](../captures/40-win-installation-adds.png)
+*Installation du rôle AD DS*
+
+![Domaine atelier.local créé](../captures/41-ad-domaine-cree.png)
+*Domaine atelier.local créé*
+
+![Résolution DNS de DC01](../captures/42-dns-dc01-resolution.png)
+*Résolution DNS de DC01*
+
+![Enregistrement DNS de glpi.atelier.local](../captures/43-dns-enregistrement-glpi.png)
+*Enregistrement DNS de glpi.atelier.local*
+
+![Structure des unités d'organisation](../captures/44-ad-structure-ou.png)
+*Structure des unités d'organisation*
+
+![Console Utilisateurs et ordinateurs Active Directory](../captures/44b-ad-console-ou.png)
+*Console Utilisateurs et ordinateurs Active Directory*
+
+![Fichier CSV des utilisateurs](../captures/45-csv-utilisateurs.png)
+*Fichier CSV des utilisateurs*
+
+![Exécution du script de création des comptes](../captures/46-ad-creation-utilisateurs.png)
+*Exécution du script de création des comptes*
+
+![Vérification des comptes créés par service](../captures/46b-ad-verification-utilisateurs.png)
+*Vérification des comptes créés par service*
+
+![Groupes de sécurité et nombre de membres](../captures/47-ad-groupes-securite.png)
+*Groupes de sécurité et nombre de membres*
+
+![Configuration IP et DNS du poste client](../captures/49-client-ip-dns.png)
+*Configuration IP et DNS du poste client*
+
+![Poste client dans l'OU Ordinateurs](../captures/50b-ad-ordinateur-client.png)
+*Poste client dans l'OU Ordinateurs*
+
+![Compte de service svc-glpi-ldap (mot de passe sans expiration)](../captures/51-ad-compte-service-glpi.png)
+*Compte de service svc-glpi-ldap (mot de passe sans expiration)*
+
+![Installation d'AD CS](../captures/54-adcs-installation.png)
+*Installation d'AD CS*
+
+![Certificat du contrôleur de domaine pour LDAPS](../captures/54b-dc-certificat-ldaps.png)
+*Certificat du contrôleur de domaine pour LDAPS*
+
+![Connexion LDAPS testée avec ldp.exe](../captures/54d-ldp-connexion-ldaps.png)
+*Connexion LDAPS testée avec ldp.exe*
+
+![Export du certificat de l'autorité](../captures/55-ca-export.png)
+*Export du certificat de l'autorité*
+
+![Autorité approuvée sur glpi-srv](../captures/55b-glpi-srv-ca-approuvee.png)
+*Autorité approuvée sur glpi-srv*

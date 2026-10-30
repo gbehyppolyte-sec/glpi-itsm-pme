@@ -6,7 +6,6 @@
 | Composants | GLPI 12 (interface Self-Service) |
 | Impact | Les employés ne voient aucun article d'aide, donc ouvrent plus de tickets |
 | Priorité | Moyenne |
-| Ticket GLPI | #_à compléter_ |
 
 ## Symptômes
 - Connecté en Super-Admin, les 3 articles apparaissent. Connecté en employé (`henri.morel`), la **FAQ** est vide.
@@ -40,4 +39,12 @@ Connecté en employé : les 3 articles apparaissent dans la FAQ.
 - Toujours tester avec le profil réellement utilisé par les utilisateurs finaux.
 
 ## Captures
-`captures/XX-faq-vide.png`, `captures/XX-autorisations.png`, `captures/XX-faq-3-articles.png`
+
+![FAQ vide vue par un employé (avant)](../captures/62a-glpi-faq-vide-selfservice.png)
+*FAQ vide vue par un employé (avant)*
+
+![Autorisations de l'article sur l'entité Atelier Morel](../captures/38a-glpi-kb-autorisations.png)
+*Autorisations de l'article sur l'entité Atelier Morel*
+
+![FAQ avec les 3 articles (après)](../captures/62-glpi-faq-selfservice.png)
+*FAQ avec les 3 articles (après)*

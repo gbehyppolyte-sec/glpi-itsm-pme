@@ -6,7 +6,6 @@
 | Composants | GLPI Agent 1.21, GLPI 12 |
 | Impact | Fiche sans système d'exploitation, sans logiciels, sans processeur |
 | Priorité | Basse |
-| Ticket GLPI | #_à compléter_ |
 
 ## Symptômes
 Après suppression définitive du poste dans GLPI puis nouvel envoi, la fiche (ID 2) est recréée avec seulement des volumes, des processus et des ports réseau. Les colonnes **Système d'exploitation** et **Processeur** sont vides, et l'onglet Logiciels n'affiche aucun compteur.
@@ -35,4 +34,9 @@ La fiche affiche : système d'exploitation, 23 composants, 181 logiciels, 127 pr
 - Pour un poste supprimé par erreur, prévoir cette commande dans la procédure d'exploitation.
 
 ## Captures
-`captures/XX-fiche-incomplete.png`, `captures/XX-journal-agent.png`, `captures/69-composants-ordinateur.png`
+
+![Service GLPI-Agent en fonctionnement](../captures/66-service-agent.png)
+*Service GLPI-Agent en fonctionnement*
+
+![Fiche complète après inventaire complet (23 composants, 181 logiciels, utilisateur et lieu)](../captures/72-fiche-poste-rattache.png)
+*Fiche complète après inventaire complet (23 composants, 181 logiciels, utilisateur et lieu)*

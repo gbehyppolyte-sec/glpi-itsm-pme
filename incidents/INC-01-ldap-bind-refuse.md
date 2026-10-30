@@ -6,7 +6,6 @@
 | Composants | glpi-srv (GLPI 12), DC01 (Windows Server 2025, AD DS) |
 | Impact | Impossible d'importer les utilisateurs AD dans GLPI |
 | Priorité | Haute |
-| Ticket GLPI | #_à compléter_ |
 
 ## Symptômes
 - Dans GLPI (Configuration > Authentification > Annuaires LDAP), le bouton **Tester** affiche « Test échoué ».
@@ -59,4 +58,21 @@ Le contrôleur de domaine exige un canal chiffré ou signé. GLPI se connectait 
 - Documenter l'autorité de certification et sa date d'expiration.
 
 ## Captures
-`captures/XX-ldapsearch-erreur-8.png`, `captures/XX-glpi-test-ldap-reussi.png`
+
+![Erreur « Strong(er) authentication required (8) » sur ldap:// (port 389)](../captures/53-ldap-bind-refuse.png)
+*Erreur « Strong(er) authentication required (8) » sur ldap:// (port 389)*
+
+![Installation du rôle AD CS](../captures/54-adcs-installation.png)
+*Installation du rôle AD CS*
+
+![Export du certificat de l'autorité](../captures/55-ca-export.png)
+*Export du certificat de l'autorité*
+
+![Autorité approuvée sur glpi-srv](../captures/55b-glpi-srv-ca-approuvee.png)
+*Autorité approuvée sur glpi-srv*
+
+![ldapsearch en LDAPS : réponse correcte (30 utilisateurs)](../captures/56b-ldaps-ldapsearch-ok.png)
+*ldapsearch en LDAPS : réponse correcte (30 utilisateurs)*
+
+![Test LDAP réussi dans GLPI (port 636)](../captures/52b-glpi-ldap-test-ok.png)
+*Test LDAP réussi dans GLPI (port 636)*

@@ -6,7 +6,6 @@
 | Composants | DC01 (DNS intégré à l'AD), glpi-srv, postes clients |
 | Impact | Le nom `glpi.atelier.local` ne s'ouvre pas ou pointe sur la mauvaise adresse |
 | Priorité | Haute |
-| Ticket GLPI | #_à compléter_ |
 
 ## Symptômes
 - Depuis le navigateur du PC physique : `NXDOMAIN` sur `glpi.atelier.local`.
@@ -57,4 +56,12 @@ Depuis PC-CLIENT01 : `Resolve-DnsName glpi.atelier.local -Type A` renvoie unique
 - Surveiller les enregistrements A de la zone après chaque changement réseau.
 
 ## Captures
-`captures/XX-nxdomain.png`, `captures/XX-resolve-dnsonly.png`
+
+![Résolution de dc01.atelier.local sur le serveur DNS du lab](../captures/42-dns-dc01-resolution.png)
+*Résolution de dc01.atelier.local sur le serveur DNS du lab*
+
+![Résolution de glpi.atelier.local vers 192.168.50.10](../captures/43-dns-enregistrement-glpi.png)
+*Résolution de glpi.atelier.local vers 192.168.50.10*
+
+![Configuration IP et DNS du poste client](../captures/49-client-ip-dns.png)
+*Configuration IP et DNS du poste client*

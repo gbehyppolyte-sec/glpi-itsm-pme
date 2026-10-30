@@ -54,9 +54,14 @@ Domaine `atelier.local`, interface GLPI sur `glpi.atelier.local`.
 | [INC-04](incidents/INC-04-poste-mauvaise-entite.md) | Poste inventorié dans l'entité racine | Aucune règle d'affectation : règle sur le tag de l'agent |
 | [INC-05](incidents/INC-05-inventaire-partiel.md) | Fiche d'ordinateur incomplète | Inventaire partiel de l'agent après suppression de la fiche : `--full` |
 
-## Captures
+## Aperçu
 
-Voir [captures/](captures/) : inventaire des postes, tickets, SLA, règles, annuaire LDAP, tableau de bord.
+| | |
+|---|---|
+| ![Test LDAP réussi](captures/52b-glpi-ldap-test-ok.png)<br>*Liaison GLPI et Active Directory en LDAPS : 30 utilisateurs trouvés* | ![SLA](captures/glpi-sla-liste.png)<br>*Niveau de service : 3 SLA (4 h, 1 jour, 3 jours)* |
+| ![FAQ employé](captures/62-glpi-faq-selfservice.png)<br>*FAQ vue par un employé connecté avec son compte de domaine* | ![Fiche poste](captures/72-fiche-poste-rattache.png)<br>*Poste inventorié automatiquement, rattaché à son utilisateur et à son lieu* |
+
+Toutes les captures sont dans [captures/](captures/).
 
 ## Structure du dépôt
 

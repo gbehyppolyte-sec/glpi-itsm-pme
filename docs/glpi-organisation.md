@@ -56,3 +56,62 @@ employés dans l'interface Self-Service (voir [INC-03](../incidents/INC-03-kb-in
 
 GLPI fournit une règle d'affectation d'habilitations par défaut qui donne le profil Self-Service sur l'**entité racine**.
 Un employé pourrait ainsi créer des tickets hors de l'entité Atelier Morel, donc sans SLA ni routage. Elle a été désactivée.
+
+## Captures
+
+![Entité Atelier Morel](../captures/glpi-entite.png)
+*Entité Atelier Morel*
+
+![Lieux : Siège, Atelier, Salle serveur](../captures/glpi-lieux.png)
+*Lieux : Siège, Atelier, Salle serveur*
+
+![Profils](../captures/glpi-profils.png)
+*Profils*
+
+![Groupe de support et ses membres](../captures/glpi-groupe-membres.png)
+*Groupe de support et ses membres*
+
+![Catégories de tickets](../captures/glpi-categories.png)
+*Catégories de tickets*
+
+![Calendrier des heures ouvrées](../captures/glpi-calendrier-horaires.png)
+*Calendrier des heures ouvrées*
+
+![Matrice urgence × impact](../captures/glpi-matrice-priorite.png)
+*Matrice urgence × impact*
+
+![Niveau de service et les 3 SLA (4 h, 1 jour, 3 jours)](../captures/glpi-sla-liste.png)
+*Niveau de service et les 3 SLA (4 h, 1 jour, 3 jours)*
+
+![Règle SLA Critique : critères](../captures/glpi-regle-sla-critique1.png)
+*Règle SLA Critique : critères*
+
+![Règle SLA Critique : actions](../captures/glpi-regle-sla-critique2.png)
+*Règle SLA Critique : actions*
+
+![Règle Catégorie Réseau vers Support N2](../captures/36a-glpi-regle-reseau-support-n2.png)
+*Règle Catégorie Réseau vers Support N2*
+
+![Tickets de test avec SLA appliqué selon la priorité](../captures/35b-glpi-tickets-test-sla-liste.png)
+*Tickets de test avec SLA appliqué selon la priorité*
+
+![Base de connaissances](../captures/38-glpi-base-connaissances.png)
+*Base de connaissances*
+
+![Autorisations d'un article](../captures/38a-glpi-kb-autorisations.png)
+*Autorisations d'un article*
+
+![Annuaire LDAP : paramètres](../captures/52-glpi-ldap-formulaire.png)
+*Annuaire LDAP : paramètres*
+
+![Test LDAP réussi (30 entrées)](../captures/52b-glpi-ldap-test-ok.png)
+*Test LDAP réussi (30 entrées)*
+
+![Utilisateurs importés de l'AD](../captures/60-glpi-utilisateurs-importes.png)
+*Utilisateurs importés de l'AD*
+
+![Connexion d'un employé avec son compte de domaine](../captures/61-glpi-connexion-ad-selfservice.png)
+*Connexion d'un employé avec son compte de domaine*
+
+![FAQ vue par un employé](../captures/62-glpi-faq-selfservice.png)
+*FAQ vue par un employé*

@@ -150,3 +150,65 @@ sudo systemctl start apache2
 - Les sauvegardes restent **sur la même machine** : il faudrait les copier vers un autre support (règle 3-2-1).
 - Restauration testée sur la même VM ; un test sur une VM neuve à partir des seules sauvegardes serait la suite logique.
 - Pas de chiffrement des archives : à ajouter si elles quittent le serveur (elles contiennent la clé de chiffrement de GLPI).
+
+## Captures
+
+![Configuration réseau (netplan)](../captures/neplan.png)
+*Configuration réseau (netplan)*
+
+![Adresses IP de glpi-srv](../captures/glpi-srv%20ip.png)
+*Adresses IP de glpi-srv*
+
+![Base MariaDB](../captures/mariadatabase.png)
+*Base MariaDB*
+
+![Configuration PHP](../captures/php-config.png)
+*Configuration PHP*
+
+![apache2ctl configtest : Syntax OK](../captures/apache-configtest.png)
+*apache2ctl configtest : Syntax OK*
+
+![Assistant d'installation de GLPI](../captures/glpi-installeur.png)
+*Assistant d'installation de GLPI*
+
+![Prérequis (1/3)](../captures/glpi-prerequis1.png)
+*Prérequis (1/3)*
+
+![Prérequis (2/3)](../captures/glpi-prerequis2.png)
+*Prérequis (2/3)*
+
+![Prérequis (3/3)](../captures/glpi-prerequis3.png)
+*Prérequis (3/3)*
+
+![Connexion à la base](../captures/glpi-connexion-bdd.png)
+*Connexion à la base*
+
+![Installation terminée](../captures/glpi-installation-terminee.png)
+*Installation terminée*
+
+![Fichiers de configuration](../captures/glpi-config-fichiers.png)
+*Fichiers de configuration*
+
+![Avertissements de sécurité (avant)](../captures/glpi-avertissements-securite.png)
+*Avertissements de sécurité (avant)*
+
+![Comptes sécurisés](../captures/glpi-comptes-securises.png)
+*Comptes sécurisés*
+
+![Bandeau disparu (après)](../captures/glpi-bandeau-disparu.png)
+*Bandeau disparu (après)*
+
+![Tâches planifiées de GLPI](../captures/glpi-cron-systeme.png)
+*Tâches planifiées de GLPI*
+
+![Exécution du script de sauvegarde](../captures/glpi-sauvegarde.png)
+*Exécution du script de sauvegarde*
+
+![Base détruite (avant restauration)](../captures/glpi-base-detruite.png)
+*Base détruite (avant restauration)*
+
+![Restauration](../captures/glpi-restauration.png)
+*Restauration*
+
+![Restauration réussie : ticket témoin retrouvé](../captures/glpi-restauration-ok.png)
+*Restauration réussie : ticket témoin retrouvé*

@@ -1,17 +1,116 @@
 # Captures
 
-Copies d'écran numérotées, dans l'ordre du projet. Aucune ne montre de mot de passe ni de clé de licence.
+Copies d'écran du projet, classées par thème. Les documents du dépôt ([docs/](../docs), [incidents/](../incidents)) les référencent directement.
 
-| N° | Contenu |
-|---|---|
-| 64 | Inventaire activé, authentification des agents |
-| 64c | Profil « Agent inventaire » (droits minimaux) |
-| 65 | Installeur de l'agent, adresse du serveur |
-| 66 | Service GLPI-Agent en fonctionnement, journal d'envoi |
-| 67 | Parc > Ordinateurs, entité Atelier Morel |
-| 68-69 | Fiche d'un ordinateur : composants, logiciels, système |
-| 70 | Règle d'affectation à l'entité (tag) |
-| 71 | Parc de 2 machines (poste + serveur) |
-| 72 | Rattachement utilisateur et lieu |
+## Installation et sécurisation de GLPI
 
-Compléter avec les captures des phases précédentes (installation, SLA, règles, LDAP, tickets).
+- [neplan.png](neplan.png)
+- [glpi-srv ip.png](glpi-srv%20ip.png)
+- [test de connectivité.png](test%20de%20connectivit%C3%A9.png)
+- [apache default.png](apache%20default.png)
+- [apache-configtest.png](apache-configtest.png)
+- [mariadatabase.png](mariadatabase.png)
+- [php-config.png](php-config.png)
+- [installation glpi.png](installation%20glpi.png)
+- [glpi-installeur.png](glpi-installeur.png)
+- [glpi-prerequis1.png](glpi-prerequis1.png)
+- [glpi-prerequis2.png](glpi-prerequis2.png)
+- [glpi-prerequis3.png](glpi-prerequis3.png)
+- [glpi-connexion-bdd.png](glpi-connexion-bdd.png)
+- [glpi-installation-terminee.png](glpi-installation-terminee.png)
+- [glpi-config-fichiers.png](glpi-config-fichiers.png)
+- [glpi-comptes-defaut.png](glpi-comptes-defaut.png)
+- [glpi-avertissements-securite.png](glpi-avertissements-securite.png)
+- [glpi-comptes-securises.png](glpi-comptes-securises.png)
+- [glpi-bandeau-disparu.png](glpi-bandeau-disparu.png)
+- [glpi-accueil-vide.png](glpi-accueil-vide.png)
+- [glpi-cron-systeme.png](glpi-cron-systeme.png)
+- [glpi-cron-systemes.png](glpi-cron-systemes.png)
+- [glpi-arborescence.png](glpi-arborescence.png)
+
+## Sauvegarde et restauration
+
+- [glpi-sauvegarde.png](glpi-sauvegarde.png)
+- [glpi-base-detruite.png](glpi-base-detruite.png)
+- [glpi-restauration.png](glpi-restauration.png)
+- [glpi-restauration-ok.png](glpi-restauration-ok.png)
+
+## Organisation du service GLPI
+
+- [glpi-entite.png](glpi-entite.png)
+- [glpi-lieux.png](glpi-lieux.png)
+- [glpi-profils.png](glpi-profils.png)
+- [glpi-utilisateurs.png](glpi-utilisateurs.png)
+- [glpi-groupe-membres.png](glpi-groupe-membres.png)
+- [glpi-categories.png](glpi-categories.png)
+- [glpi-categorie-visibilite.png](glpi-categorie-visibilite.png)
+- [glpi-calendrier-horaires.png](glpi-calendrier-horaires.png)
+- [glpi-matrice-priorite.png](glpi-matrice-priorite.png)
+- [glpi-sla-liste.png](glpi-sla-liste.png)
+- [glpi-regle-sla-critique1.png](glpi-regle-sla-critique1.png)
+- [glpi-regle-sla-critique2.png](glpi-regle-sla-critique2.png)
+- [glpi-actions-sla.png](glpi-actions-sla.png)
+- [35b-glpi-tickets-test-sla-liste.png](35b-glpi-tickets-test-sla-liste.png)
+- [glpi-ticket-test-sla.png](glpi-ticket-test-sla.png)
+- [test ticket.png](test%20ticket.png)
+- [TEST ROUTAGE - Wi-Fi coupé.png](TEST%20ROUTAGE%20-%20Wi-Fi%20coup%C3%A9.png)
+- [36a-glpi-regle-reseau-support-n2.png](36a-glpi-regle-reseau-support-n2.png)
+- [36b-glpi-regle-reseau-support-n2.png](36b-glpi-regle-reseau-support-n2.png)
+- [38-glpi-base-connaissances.png](38-glpi-base-connaissances.png)
+- [38a-glpi-kb-autorisations.png](38a-glpi-kb-autorisations.png)
+
+## Active Directory, DNS, certificats
+
+- [40-win-installation-adds.png](40-win-installation-adds.png)
+- [41-ad-domaine-cree.png](41-ad-domaine-cree.png)
+- [42-dns-dc01-resolution.png](42-dns-dc01-resolution.png)
+- [43-dns-enregistrement-glpi.png](43-dns-enregistrement-glpi.png)
+- [44-ad-structure-ou.png](44-ad-structure-ou.png)
+- [44b-ad-console-ou.png](44b-ad-console-ou.png)
+- [45-csv-utilisateurs.png](45-csv-utilisateurs.png)
+- [46-ad-creation-utilisateurs.png](46-ad-creation-utilisateurs.png)
+- [46b-ad-verification-utilisateurs.png](46b-ad-verification-utilisateurs.png)
+- [47-ad-groupes-securite.png](47-ad-groupes-securite.png)
+- [groupes.png](groupes.png)
+- [49-client-ip-dns.png](49-client-ip-dns.png)
+- [joindre ordin domaine.png](joindre%20ordin%20domaine.png)
+- [50b-ad-ordinateur-client.png](50b-ad-ordinateur-client.png)
+- [50c-client-ecran-connexion.png](50c-client-ecran-connexion.png)
+- [51-ad-compte-service-glpi.png](51-ad-compte-service-glpi.png)
+- [54-adcs-installation.png](54-adcs-installation.png)
+- [54b-dc-certificat-ldaps.png](54b-dc-certificat-ldaps.png)
+- [54c-adcs-configuration1.png](54c-adcs-configuration1.png)
+- [54c-adcs-configuration2.png](54c-adcs-configuration2.png)
+- [54c-adcs-console.png](54c-adcs-console.png)
+- [54d-ldp-connexion-ldaps.png](54d-ldp-connexion-ldaps.png)
+- [55-ca-export.png](55-ca-export.png)
+- [55b-glpi-srv-ca-approuvee.png](55b-glpi-srv-ca-approuvee.png)
+
+## Liaison LDAP et utilisateurs GLPI
+
+- [51b-glpi-srv-test-ldap.png](51b-glpi-srv-test-ldap.png)
+- [53-ldap-bind-refuse.png](53-ldap-bind-refuse.png)
+- [52-glpi-ldap-formulaire.png](52-glpi-ldap-formulaire.png)
+- [52b-glpi-ldap-test-ok.png](52b-glpi-ldap-test-ok.png)
+- [56b-ldaps-ldapsearch-ok.png](56b-ldaps-ldapsearch-ok.png)
+- [58-glpi-regle-habilitations1.png](58-glpi-regle-habilitations1.png)
+- [58-glpi-regle-habilitations2.png](58-glpi-regle-habilitations2.png)
+- [-glpi-habilitations.png](-glpi-habilitations.png)
+- [60a-glpi-utilisateurs-avant-import.png](60a-glpi-utilisateurs-avant-import.png)
+- [User importation1.png](User%20importation1.png)
+- [user importation 2.png](user%20importation%202.png)
+- [60-glpi-utilisateurs-importes.png](60-glpi-utilisateurs-importes.png)
+- [61-glpi-connexion-ad-selfservice.png](61-glpi-connexion-ad-selfservice.png)
+- [62a-glpi-faq-vide-selfservice.png](62a-glpi-faq-vide-selfservice.png)
+- [62-glpi-faq-selfservice.png](62-glpi-faq-selfservice.png)
+- [63-glpi-ticket-employe.png](63-glpi-ticket-employe.png)
+- [glpi-ticket-employe-admin.png](glpi-ticket-employe-admin.png)
+
+## Inventaire du parc
+
+- [64-inventaire-active.png](64-inventaire-active.png)
+- [64c-profil-agent-inventaire.png](64c-profil-agent-inventaire.png)
+- [65-agent-installation.png](65-agent-installation.png)
+- [66-service-agent.png](66-service-agent.png)
+- [72-fiche-poste-rattache.png](72-fiche-poste-rattache.png)
+- [72-fiche-poste-rattache_server.png](72-fiche-poste-rattache_server.png)

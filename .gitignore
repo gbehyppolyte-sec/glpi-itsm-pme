@@ -1,0 +1,10 @@
+# Secrets et fichiers sensibles : ne jamais versionner
+config_db.php
+glpicrypt.key
+*.key
+*.pem
+*.pfx
+.my.cnf
+*.sql
+*.sql.gz
+*.tar.gz

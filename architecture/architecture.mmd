@@ -1,0 +1,16 @@
+%%{init: {'theme':'neutral','flowchart':{'nodeSpacing':60,'rankSpacing':80}}}%%
+flowchart TB
+  NET(("Internet<br/>via NAT VMware"))
+  subgraph LAB["Réseau lab VMnet3 - 192.168.50.0/24 (host-only, sans DHCP)"]
+    direction LR
+    PC["<b>PC-CLIENT01</b><br/>Windows 10 - 192.168.50.20<br/>GLPI Agent"]
+    GLPI["<b>glpi-srv</b><br/>Ubuntu 24.04 - 192.168.50.10<br/>GLPI 12, Apache, MariaDB, PHP 8.3"]
+    DC["<b>DC01</b><br/>Windows Server 2025 - 192.168.50.5<br/>AD DS, DNS, AD CS (CA racine)"]
+    PC -->|"1. DNS, domaine"| DC
+    PC -->|"2. tickets, FAQ (HTTP)"| GLPI
+    PC -.->|"3. inventaire (agent)"| GLPI
+    GLPI -->|"4. LDAPS 636"| DC
+    DC -.->|"5. inventaire (agent)"| GLPI
+  end
+  GLPI ---|"ens33 (paquets, mises à jour)"| NET
+  DC ---|"Ethernet2 (DNS désactivé)"| NET
